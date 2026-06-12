@@ -1,0 +1,49 @@
+{
+  "known_evil_iocs": [
+    {
+      "type": "path",
+      "value": "C:\\Users\\jdoe\\Documents\\archive.7z",
+      "description": "Staged data archive"
+    },
+    {
+      "type": "ip",
+      "value": "203.0.113.45",
+      "description": "Personal cloud storage IP"
+    }
+  ],
+  "known_clean_entities": [
+    {
+      "type": "process",
+      "value": "outlook.exe",
+      "description": "Normal email client"
+    }
+  ],
+  "attack_timeline": [
+    {
+      "time": "2024-02-10T03:30:00Z",
+      "event": "User jdoe accesses sensitive HR share at 03:30 AM"
+    },
+    {
+      "time": "2024-02-10T04:00:00Z",
+      "event": "7-Zip used to archive 2.3GB of HR documents"
+    },
+    {
+      "time": "2024-02-10T04:05:00Z",
+      "event": "Large outbound transfer to personal Dropbox"
+    }
+  ],
+  "known_iocs": [
+    "C:\\Users\\jdoe\\Documents\\archive.7z",
+    "203.0.113.45"
+  ],
+  "timeline_events": [
+    "User jdoe accesses sensitive HR share at 03:30 AM",
+    "7-Zip used to archive 2.3GB of HR documents",
+    "Large outbound transfer to personal Dropbox"
+  ],
+  "attack_chain": [
+    "User jdoe accesses sensitive HR share at 03:30 AM",
+    "7-Zip used to archive 2.3GB of HR documents",
+    "Large outbound transfer to personal Dropbox"
+  ]
+}

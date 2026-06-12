@@ -1,0 +1,49 @@
+{
+  "known_evil_iocs": [
+    {
+      "type": "path",
+      "value": "powershell -enc JABpAG0...",
+      "description": "Base64-encoded PS payload"
+    },
+    {
+      "type": "ip",
+      "value": "198.51.100.99",
+      "description": "Attacker C2 IP"
+    }
+  ],
+  "known_clean_entities": [
+    {
+      "type": "process",
+      "value": "powershell.exe",
+      "description": "PowerShell \u2014 benign if invocation is normal"
+    }
+  ],
+  "attack_timeline": [
+    {
+      "time": "2024-04-05T14:00:00Z",
+      "event": "PowerShell invoked with -enc flag and encoded payload"
+    },
+    {
+      "time": "2024-04-05T14:00:10Z",
+      "event": "WMIC spawned for WMI persistence subscription"
+    },
+    {
+      "time": "2024-04-05T14:01:00Z",
+      "event": "rundll32.exe loads malicious DLL from %APPDATA%"
+    }
+  ],
+  "known_iocs": [
+    "powershell -enc JABpAG0...",
+    "198.51.100.99"
+  ],
+  "timeline_events": [
+    "PowerShell invoked with -enc flag and encoded payload",
+    "WMIC spawned for WMI persistence subscription",
+    "rundll32.exe loads malicious DLL from %APPDATA%"
+  ],
+  "attack_chain": [
+    "PowerShell invoked with -enc flag and encoded payload",
+    "WMIC spawned for WMI persistence subscription",
+    "rundll32.exe loads malicious DLL from %APPDATA%"
+  ]
+}

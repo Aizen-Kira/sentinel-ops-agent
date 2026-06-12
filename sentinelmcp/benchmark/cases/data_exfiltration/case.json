@@ -1,0 +1,13 @@
+{
+  "id": "case-exfil-001",
+  "description": "Data exfiltration via archive creation and outbound HTTPS transfer",
+  "disk_path": "/evidence/exfil/disk.E01",
+  "memory_path": "/evidence/exfil/mem.dmp",
+  "pcap_path": "/evidence/exfil/capture.pcap",
+  "tags": [
+    "exfiltration",
+    "archive",
+    "outbound-transfer",
+    "T1041"
+  ]
+}

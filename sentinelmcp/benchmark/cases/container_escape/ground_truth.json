@@ -1,0 +1,61 @@
+{
+  "known_evil_iocs": [
+    {
+      "type": "ip",
+      "value": "203.0.113.99",
+      "description": "Attacker reverse shell callback IP"
+    },
+    {
+      "type": "path",
+      "value": "/proc/1/root",
+      "description": "Host filesystem access via container escape"
+    }
+  ],
+  "known_clean_entities": [
+    {
+      "type": "process",
+      "value": "containerd",
+      "description": "Legitimate container runtime"
+    }
+  ],
+  "attack_timeline": [
+    {
+      "time": "2024-11-04T01:00:00Z",
+      "event": "RCE exploit against vulnerable application in privileged container"
+    },
+    {
+      "time": "2024-11-04T01:05:00Z",
+      "event": "Attacker leverages CAP_SYS_ADMIN to mount host filesystem"
+    },
+    {
+      "time": "2024-11-04T01:10:00Z",
+      "event": "chroot /proc/1/root to escape to underlying host OS"
+    },
+    {
+      "time": "2024-11-04T01:15:00Z",
+      "event": "SSH key installed on host for persistent access"
+    },
+    {
+      "time": "2024-11-04T01:20:00Z",
+      "event": "Lateral movement to adjacent Kubernetes nodes"
+    }
+  ],
+  "known_iocs": [
+    "203.0.113.99",
+    "/proc/1/root"
+  ],
+  "timeline_events": [
+    "RCE exploit against vulnerable application in privileged container",
+    "Attacker leverages CAP_SYS_ADMIN to mount host filesystem",
+    "chroot /proc/1/root to escape to underlying host OS",
+    "SSH key installed on host for persistent access",
+    "Lateral movement to adjacent Kubernetes nodes"
+  ],
+  "attack_chain": [
+    "RCE exploit against vulnerable application in privileged container",
+    "Attacker leverages CAP_SYS_ADMIN to mount host filesystem",
+    "chroot /proc/1/root to escape to underlying host OS",
+    "SSH key installed on host for persistent access",
+    "Lateral movement to adjacent Kubernetes nodes"
+  ]
+}

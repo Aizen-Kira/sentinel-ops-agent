@@ -1,0 +1,13 @@
+{
+  "id": "case-lolbas-001",
+  "description": "Living-off-the-land attack using PowerShell, WMIC, and rundll32",
+  "disk_path": "/evidence/lolbas/disk.E01",
+  "memory_path": "/evidence/lolbas/mem.dmp",
+  "pcap_path": "/evidence/lolbas/capture.pcap",
+  "tags": [
+    "lolbas",
+    "powershell",
+    "wmic",
+    "rundll32"
+  ]
+}

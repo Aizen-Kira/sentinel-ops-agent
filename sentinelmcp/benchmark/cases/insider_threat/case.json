@@ -1,0 +1,12 @@
+{
+  "id": "case-insider-001",
+  "description": "Insider threat \u2014 unusual data access and exfil staging",
+  "disk_path": "/evidence/insider/disk.E01",
+  "memory_path": "/evidence/insider/mem.dmp",
+  "pcap_path": "/evidence/insider/capture.pcap",
+  "tags": [
+    "insider",
+    "data-staging",
+    "unusual-access"
+  ]
+}

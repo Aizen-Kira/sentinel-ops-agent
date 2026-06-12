@@ -1,0 +1,83 @@
+{
+  "known_evil_iocs": [
+    {
+      "type": "ip",
+      "value": "192.168.10.50",
+      "description": "Lateral movement destination"
+    },
+    {
+      "type": "path",
+      "value": "psexesvc.exe",
+      "description": "PsExec service"
+    },
+    {
+      "type": "hash",
+      "value": "mimikatz.exe",
+      "description": "Credential dumper"
+    },
+    {
+      "type": "path",
+      "value": "lsass.dmp",
+      "description": "LSASS dump file"
+    }
+  ],
+  "known_clean_entities": [
+    {
+      "type": "process",
+      "value": "svchost.exe",
+      "description": "Legitimate service host"
+    },
+    {
+      "type": "process",
+      "value": "explorer.exe",
+      "description": "Windows shell"
+    },
+    {
+      "type": "process",
+      "value": "csrss.exe",
+      "description": "Client Server Runtime Process"
+    }
+  ],
+  "attack_timeline": [
+    {
+      "time": "2024-05-15T10:00:00Z",
+      "event": "phishing email opened"
+    },
+    {
+      "time": "2024-05-15T10:05:00Z",
+      "event": "powershell download cradle executed"
+    },
+    {
+      "time": "2024-05-15T10:15:00Z",
+      "event": "psexec lateral movement to 192.168.10.50"
+    },
+    {
+      "time": "2024-05-15T10:20:00Z",
+      "event": "credential dumping via lsass"
+    },
+    {
+      "time": "2024-05-15T10:25:00Z",
+      "event": "mimikatz executed"
+    }
+  ],
+  "known_iocs": [
+    "192.168.10.50",
+    "psexesvc.exe",
+    "mimikatz.exe",
+    "lsass.dmp"
+  ],
+  "timeline_events": [
+    "phishing email opened",
+    "powershell download cradle executed",
+    "psexec lateral movement to 192.168.10.50",
+    "credential dumping via lsass",
+    "mimikatz executed"
+  ],
+  "attack_chain": [
+    "phishing email opened",
+    "powershell download cradle executed",
+    "psexec lateral movement to 192.168.10.50",
+    "credential dumping via lsass",
+    "mimikatz executed"
+  ]
+}

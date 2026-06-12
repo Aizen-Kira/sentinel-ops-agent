@@ -1,0 +1,55 @@
+{
+  "known_evil_iocs": [
+    {
+      "type": "hash",
+      "value": "mimikatz_sha256_abc123",
+      "description": "Mimikatz binary"
+    },
+    {
+      "type": "path",
+      "value": "C:\\Windows\\Temp\\lsass.dmp",
+      "description": "LSASS dump file"
+    }
+  ],
+  "known_clean_entities": [
+    {
+      "type": "process",
+      "value": "lsass.exe",
+      "description": "Legitimate LSASS \u2014 victim not attacker"
+    }
+  ],
+  "attack_timeline": [
+    {
+      "time": "2024-05-20T03:00:00Z",
+      "event": "mimikatz.exe dropped to Temp directory"
+    },
+    {
+      "time": "2024-05-20T03:00:10Z",
+      "event": "sekurlsa::logonpasswords executed against LSASS"
+    },
+    {
+      "time": "2024-05-20T03:00:20Z",
+      "event": "Credential hashes written to lsass.dmp"
+    },
+    {
+      "time": "2024-05-20T03:01:00Z",
+      "event": "Pass-the-hash lateral movement initiated"
+    }
+  ],
+  "known_iocs": [
+    "mimikatz_sha256_abc123",
+    "C:\\Windows\\Temp\\lsass.dmp"
+  ],
+  "timeline_events": [
+    "mimikatz.exe dropped to Temp directory",
+    "sekurlsa::logonpasswords executed against LSASS",
+    "Credential hashes written to lsass.dmp",
+    "Pass-the-hash lateral movement initiated"
+  ],
+  "attack_chain": [
+    "mimikatz.exe dropped to Temp directory",
+    "sekurlsa::logonpasswords executed against LSASS",
+    "Credential hashes written to lsass.dmp",
+    "Pass-the-hash lateral movement initiated"
+  ]
+}

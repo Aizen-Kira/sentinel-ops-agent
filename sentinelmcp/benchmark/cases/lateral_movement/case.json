@@ -1,0 +1,7 @@
+{
+  "id": "lateral_movement_001",
+  "disk_path": null,
+  "memory_path": null,
+  "pcap_path": null,
+  "description": "Suspected lateral movement via PsExec following phishing compromise."
+}

@@ -1,0 +1,12 @@
+{
+  "id": "case-clean-001",
+  "description": "Clean baseline \u2014 benign workstation activity, no compromise",
+  "disk_path": "/evidence/clean/disk.E01",
+  "memory_path": "/evidence/clean/mem.dmp",
+  "pcap_path": "/evidence/clean/capture.pcap",
+  "tags": [
+    "baseline",
+    "benign",
+    "clean"
+  ]
+}

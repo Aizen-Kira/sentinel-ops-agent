@@ -1,0 +1,13 @@
+{
+  "id": "case-cred-theft-001",
+  "description": "Credential theft via LSASS memory dumping (T1003)",
+  "disk_path": "/evidence/cred_theft/disk.E01",
+  "memory_path": "/evidence/cred_theft/mem.dmp",
+  "pcap_path": "/evidence/cred_theft/capture.pcap",
+  "tags": [
+    "credential-theft",
+    "lsass",
+    "mimikatz",
+    "T1003"
+  ]
+}

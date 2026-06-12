@@ -1,0 +1,49 @@
+{
+  "known_evil_iocs": [
+    {
+      "type": "hash",
+      "value": "evil_signed_update_sha256",
+      "description": "Trojanised update package"
+    },
+    {
+      "type": "domain",
+      "value": "update.legit-software-evil.com",
+      "description": "Typosquatted update server"
+    }
+  ],
+  "known_clean_entities": [
+    {
+      "type": "hash",
+      "value": "legit_update_sha256",
+      "description": "Legitimate update binary"
+    }
+  ],
+  "attack_timeline": [
+    {
+      "time": "2024-03-01T10:00:00Z",
+      "event": "Legitimate-looking signed updater executes"
+    },
+    {
+      "time": "2024-03-01T10:00:05Z",
+      "event": "Updater spawns cmd.exe \u2014 unexpected child process"
+    },
+    {
+      "time": "2024-03-01T10:01:00Z",
+      "event": "Backdoor establishes persistence via Run key"
+    }
+  ],
+  "known_iocs": [
+    "evil_signed_update_sha256",
+    "update.legit-software-evil.com"
+  ],
+  "timeline_events": [
+    "Legitimate-looking signed updater executes",
+    "Updater spawns cmd.exe \u2014 unexpected child process",
+    "Backdoor establishes persistence via Run key"
+  ],
+  "attack_chain": [
+    "Legitimate-looking signed updater executes",
+    "Updater spawns cmd.exe \u2014 unexpected child process",
+    "Backdoor establishes persistence via Run key"
+  ]
+}

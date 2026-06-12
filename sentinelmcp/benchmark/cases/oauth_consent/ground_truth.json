@@ -1,0 +1,55 @@
+{
+  "known_evil_iocs": [
+    {
+      "type": "domain",
+      "value": "malicious-oauth-app.io",
+      "description": "Attacker-registered Azure Enterprise App"
+    },
+    {
+      "type": "hash",
+      "value": "oauth_app_client_id_evil_abc123",
+      "description": "Malicious OAuth application client ID"
+    }
+  ],
+  "known_clean_entities": [
+    {
+      "type": "process",
+      "value": "Azure Active Directory",
+      "description": "Legitimate identity platform"
+    }
+  ],
+  "attack_timeline": [
+    {
+      "time": "2024-11-03T10:00:00Z",
+      "event": "Victim receives phishing email with OAuth consent link"
+    },
+    {
+      "time": "2024-11-03T10:05:00Z",
+      "event": "Victim grants Mail.Read and Files.ReadWrite.All to malicious app"
+    },
+    {
+      "time": "2024-11-03T10:10:00Z",
+      "event": "Attacker uses OAuth token to read victim emails silently"
+    },
+    {
+      "time": "2024-11-03T10:30:00Z",
+      "event": "Sensitive financial data exfiltrated from OneDrive"
+    }
+  ],
+  "known_iocs": [
+    "malicious-oauth-app.io",
+    "oauth_app_client_id_evil_abc123"
+  ],
+  "timeline_events": [
+    "Victim receives phishing email with OAuth consent link",
+    "Victim grants Mail.Read and Files.ReadWrite.All to malicious app",
+    "Attacker uses OAuth token to read victim emails silently",
+    "Sensitive financial data exfiltrated from OneDrive"
+  ],
+  "attack_chain": [
+    "Victim receives phishing email with OAuth consent link",
+    "Victim grants Mail.Read and Files.ReadWrite.All to malicious app",
+    "Attacker uses OAuth token to read victim emails silently",
+    "Sensitive financial data exfiltrated from OneDrive"
+  ]
+}

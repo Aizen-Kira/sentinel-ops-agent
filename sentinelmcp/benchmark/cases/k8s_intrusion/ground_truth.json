@@ -1,0 +1,61 @@
+{
+  "known_evil_iocs": [
+    {
+      "type": "ip",
+      "value": "203.0.113.50",
+      "description": "Attacker IP used for kubectl exec"
+    },
+    {
+      "type": "domain",
+      "value": "attacker-c2.io",
+      "description": "C2 callback domain"
+    }
+  ],
+  "known_clean_entities": [
+    {
+      "type": "process",
+      "value": "kube-scheduler",
+      "description": "Legitimate K8s system component"
+    }
+  ],
+  "attack_timeline": [
+    {
+      "time": "2024-11-01T03:00:00Z",
+      "event": "Exploit vulnerable Ingress controller to get pod shell"
+    },
+    {
+      "time": "2024-11-01T03:10:00Z",
+      "event": "kubectl exec into privileged pod in kube-system"
+    },
+    {
+      "time": "2024-11-01T03:15:00Z",
+      "event": "Read Kubernetes secrets from API server"
+    },
+    {
+      "time": "2024-11-01T03:20:00Z",
+      "event": "Create new ClusterRoleBinding for persistent access"
+    },
+    {
+      "time": "2024-11-01T03:30:00Z",
+      "event": "Deploy cryptominer as DaemonSet across all nodes"
+    }
+  ],
+  "known_iocs": [
+    "203.0.113.50",
+    "attacker-c2.io"
+  ],
+  "timeline_events": [
+    "Exploit vulnerable Ingress controller to get pod shell",
+    "kubectl exec into privileged pod in kube-system",
+    "Read Kubernetes secrets from API server",
+    "Create new ClusterRoleBinding for persistent access",
+    "Deploy cryptominer as DaemonSet across all nodes"
+  ],
+  "attack_chain": [
+    "Exploit vulnerable Ingress controller to get pod shell",
+    "kubectl exec into privileged pod in kube-system",
+    "Read Kubernetes secrets from API server",
+    "Create new ClusterRoleBinding for persistent access",
+    "Deploy cryptominer as DaemonSet across all nodes"
+  ]
+}

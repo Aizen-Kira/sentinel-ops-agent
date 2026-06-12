@@ -1,0 +1,49 @@
+{
+  "known_evil_iocs": [
+    {
+      "type": "ip",
+      "value": "203.0.113.200",
+      "description": "Exfil destination IP"
+    },
+    {
+      "type": "path",
+      "value": "C:\\Users\\Public\\data.zip",
+      "description": "Staged zip archive"
+    }
+  ],
+  "known_clean_entities": [
+    {
+      "type": "process",
+      "value": "chrome.exe",
+      "description": "Legitimate browser"
+    }
+  ],
+  "attack_timeline": [
+    {
+      "time": "2024-06-12T22:00:00Z",
+      "event": "WinRAR archives sensitive directories"
+    },
+    {
+      "time": "2024-06-12T22:05:00Z",
+      "event": "curl.exe uploads archive to attacker server"
+    },
+    {
+      "time": "2024-06-12T22:10:00Z",
+      "event": "Archive and tool artefacts deleted from disk"
+    }
+  ],
+  "known_iocs": [
+    "203.0.113.200",
+    "C:\\Users\\Public\\data.zip"
+  ],
+  "timeline_events": [
+    "WinRAR archives sensitive directories",
+    "curl.exe uploads archive to attacker server",
+    "Archive and tool artefacts deleted from disk"
+  ],
+  "attack_chain": [
+    "WinRAR archives sensitive directories",
+    "curl.exe uploads archive to attacker server",
+    "Archive and tool artefacts deleted from disk"
+  ]
+}

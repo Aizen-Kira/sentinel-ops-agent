@@ -1,0 +1,29 @@
+{
+  "known_evil_iocs": [],
+  "known_clean_entities": [
+    {
+      "type": "process",
+      "value": "explorer.exe",
+      "description": "Windows shell"
+    },
+    {
+      "type": "process",
+      "value": "chrome.exe",
+      "description": "Web browser"
+    },
+    {
+      "type": "process",
+      "value": "outlook.exe",
+      "description": "Email client"
+    },
+    {
+      "type": "process",
+      "value": "teams.exe",
+      "description": "Collaboration software"
+    }
+  ],
+  "attack_timeline": [],
+  "known_iocs": [],
+  "timeline_events": [],
+  "attack_chain": []
+}

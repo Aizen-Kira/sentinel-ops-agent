@@ -1,0 +1,55 @@
+{
+  "known_evil_iocs": [
+    {
+      "type": "ip",
+      "value": "185.220.101.5",
+      "description": "Attacker IP from impossible travel sign-in"
+    },
+    {
+      "type": "domain",
+      "value": "malicious-oauth-app.io",
+      "description": "Attacker-controlled OAuth application"
+    }
+  ],
+  "known_clean_entities": [
+    {
+      "type": "process",
+      "value": "Microsoft Teams",
+      "description": "Legitimate SaaS application"
+    }
+  ],
+  "attack_timeline": [
+    {
+      "time": "2024-11-01T02:00:00Z",
+      "event": "MFA fatigue push attack on victim account"
+    },
+    {
+      "time": "2024-11-01T02:15:00Z",
+      "event": "Victim approves MFA push — session hijacked"
+    },
+    {
+      "time": "2024-11-01T02:20:00Z",
+      "event": "Attacker accesses SharePoint and OneDrive via stolen session"
+    },
+    {
+      "time": "2024-11-01T02:45:00Z",
+      "event": "Bulk download of 45GB from OneDrive to attacker host"
+    }
+  ],
+  "known_iocs": [
+    "185.220.101.5",
+    "malicious-oauth-app.io"
+  ],
+  "timeline_events": [
+    "MFA fatigue push attack on victim account",
+    "Victim approves MFA push — session hijacked",
+    "Attacker accesses SharePoint and OneDrive via stolen session",
+    "Bulk download of 45GB from OneDrive to attacker host"
+  ],
+  "attack_chain": [
+    "MFA fatigue push attack on victim account",
+    "Victim approves MFA push — session hijacked",
+    "Attacker accesses SharePoint and OneDrive via stolen session",
+    "Bulk download of 45GB from OneDrive to attacker host"
+  ]
+}

@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  sentinelmcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: sentinelmcp:rc2
+    container_name: sentinelmcp-server
+    ports:
+      - "8000:8000"
+    environment:
+      - SENTINELMCP_API_KEY=${SENTINELMCP_API_KEY:?SENTINELMCP_API_KEY must be set}
+      - SENTINELMCP_MAX_ITERATIONS=10
+      - SENTINELMCP_LOG_LEVEL=INFO
+      - SENTINELMCP_ALLOWED_PATHS=/app/evidence
+    volumes:
+      - ./evidence:/app/evidence:ro
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp

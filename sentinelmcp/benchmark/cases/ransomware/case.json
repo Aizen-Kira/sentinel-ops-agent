@@ -1,0 +1,12 @@
+{
+  "id": "case-ransomware-001",
+  "description": "Ransomware infection with encryption and shadow copy deletion",
+  "disk_path": "/evidence/ransomware/disk.E01",
+  "memory_path": "/evidence/ransomware/mem.dmp",
+  "pcap_path": "/evidence/ransomware/capture.pcap",
+  "tags": [
+    "ransomware",
+    "encryption",
+    "vssadmin"
+  ]
+}

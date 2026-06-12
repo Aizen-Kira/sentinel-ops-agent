@@ -1,0 +1,55 @@
+{
+  "known_evil_iocs": [
+    {
+      "type": "hash",
+      "value": "a1b2c3d4ransomware",
+      "description": "Ransomware binary"
+    },
+    {
+      "type": "domain",
+      "value": "ransom-c2.evil.com",
+      "description": "C2 domain"
+    }
+  ],
+  "known_clean_entities": [
+    {
+      "type": "process",
+      "value": "svchost.exe",
+      "description": "Legitimate service host"
+    }
+  ],
+  "attack_timeline": [
+    {
+      "time": "2024-01-15T02:00:00Z",
+      "event": "Ransomware binary dropped to %TEMP%"
+    },
+    {
+      "time": "2024-01-15T02:01:00Z",
+      "event": "vssadmin.exe delete shadows /all /quiet"
+    },
+    {
+      "time": "2024-01-15T02:02:00Z",
+      "event": "Mass file encryption begins (.docx .xlsx .pdf)"
+    },
+    {
+      "time": "2024-01-15T02:15:00Z",
+      "event": "Ransom note dropped to Desktop"
+    }
+  ],
+  "known_iocs": [
+    "a1b2c3d4ransomware",
+    "ransom-c2.evil.com"
+  ],
+  "timeline_events": [
+    "Ransomware binary dropped to %TEMP%",
+    "vssadmin.exe delete shadows /all /quiet",
+    "Mass file encryption begins (.docx .xlsx .pdf)",
+    "Ransom note dropped to Desktop"
+  ],
+  "attack_chain": [
+    "Ransomware binary dropped to %TEMP%",
+    "vssadmin.exe delete shadows /all /quiet",
+    "Mass file encryption begins (.docx .xlsx .pdf)",
+    "Ransom note dropped to Desktop"
+  ]
+}

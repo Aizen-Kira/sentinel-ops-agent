@@ -1,0 +1,12 @@
+{
+  "id": "case-supply-chain-001",
+  "description": "Supply chain compromise via trusted software updater",
+  "disk_path": "/evidence/supply_chain/disk.E01",
+  "memory_path": "/evidence/supply_chain/mem.dmp",
+  "pcap_path": "/evidence/supply_chain/capture.pcap",
+  "tags": [
+    "supply-chain",
+    "signed-binary",
+    "updater"
+  ]
+}

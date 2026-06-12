@@ -1,0 +1,61 @@
+{
+  "known_evil_iocs": [
+    {
+      "type": "ip",
+      "value": "203.0.113.10",
+      "description": "Attacker IP used for CloudTrail StopLogging"
+    },
+    {
+      "type": "domain",
+      "value": "update.legit-software-evil.com",
+      "description": "C2 exfiltration domain"
+    }
+  ],
+  "known_clean_entities": [
+    {
+      "type": "process",
+      "value": "aws-cli",
+      "description": "Legitimate AWS CLI tool"
+    }
+  ],
+  "attack_timeline": [
+    {
+      "time": "2024-11-01T02:50:00Z",
+      "event": "API key stolen via phishing email"
+    },
+    {
+      "time": "2024-11-01T03:00:00Z",
+      "event": "StopLogging CloudTrail call to disable audit"
+    },
+    {
+      "time": "2024-11-01T03:05:00Z",
+      "event": "CreateAccessKey for victim IAM user"
+    },
+    {
+      "time": "2024-11-01T03:15:00Z",
+      "event": "ListBuckets and GetObject S3 data exfiltration"
+    },
+    {
+      "time": "2024-11-01T03:30:00Z",
+      "event": "RunInstances to spin up crypto miner fleet"
+    }
+  ],
+  "known_iocs": [
+    "203.0.113.10",
+    "update.legit-software-evil.com"
+  ],
+  "timeline_events": [
+    "API key stolen via phishing email",
+    "StopLogging CloudTrail call to disable audit",
+    "CreateAccessKey for victim IAM user",
+    "ListBuckets and GetObject S3 data exfiltration",
+    "RunInstances to spin up crypto miner fleet"
+  ],
+  "attack_chain": [
+    "API key stolen via phishing email",
+    "StopLogging CloudTrail call to disable audit",
+    "CreateAccessKey for victim IAM user",
+    "ListBuckets and GetObject S3 data exfiltration",
+    "RunInstances to spin up crypto miner fleet"
+  ]
+}

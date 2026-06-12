@@ -1,0 +1,55 @@
+{
+  "known_evil_iocs": [
+    {
+      "type": "domain",
+      "value": "anydesk-update-evil.com",
+      "description": "Attacker C2 relayed via AnyDesk"
+    },
+    {
+      "type": "path",
+      "value": "C:\\ProgramData\\AnyDesk\\ad_svchost.exe",
+      "description": "Trojanised AnyDesk binary for persistence"
+    }
+  ],
+  "known_clean_entities": [
+    {
+      "type": "process",
+      "value": "AnyDesk.exe",
+      "description": "Legitimate RMM tool when used by IT"
+    }
+  ],
+  "attack_timeline": [
+    {
+      "time": "2024-11-02T08:00:00Z",
+      "event": "Attacker sends phishing email with AnyDesk installer link"
+    },
+    {
+      "time": "2024-11-02T08:15:00Z",
+      "event": "User runs AnyDesk installer — attacker gains remote access"
+    },
+    {
+      "time": "2024-11-02T08:30:00Z",
+      "event": "AnyDesk service installed as persistent background daemon"
+    },
+    {
+      "time": "2024-11-02T09:00:00Z",
+      "event": "Attacker begins hands-on-keyboard data collection"
+    }
+  ],
+  "known_iocs": [
+    "anydesk-update-evil.com",
+    "C:\\ProgramData\\AnyDesk\\ad_svchost.exe"
+  ],
+  "timeline_events": [
+    "Attacker sends phishing email with AnyDesk installer link",
+    "User runs AnyDesk installer — attacker gains remote access",
+    "AnyDesk service installed as persistent background daemon",
+    "Attacker begins hands-on-keyboard data collection"
+  ],
+  "attack_chain": [
+    "Attacker sends phishing email with AnyDesk installer link",
+    "User runs AnyDesk installer — attacker gains remote access",
+    "AnyDesk service installed as persistent background daemon",
+    "Attacker begins hands-on-keyboard data collection"
+  ]
+}
